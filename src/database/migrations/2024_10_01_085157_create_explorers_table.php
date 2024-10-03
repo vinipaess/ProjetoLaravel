@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('explorers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('age');
-            $table->decimal('latitude', 10, 7)->nullable();
-            $table->decimal('longitude', 10, 7)->nullable();
+            $table->string('name')->unique();
+            $table->integer('age')->unique();
+            $table->decimal('latitude', 10, 7)->nullable()->unique();
+            $table->decimal('longitude', 10, 7)->nullable()->unique();
             $table->timestamps();
         });
     }

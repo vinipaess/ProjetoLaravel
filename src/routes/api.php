@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExplorerController;
 use App\Http\Controllers\ItemController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +16,8 @@ use App\Http\Controllers\ItemController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/exploradores', [ExplorerController::class, 'store']);
+Route::patch('/exploradores/{id}', [ExplorerController::class, 'updateLocation']);
+Route::get('/exploradores/{id}', [ExplorerController::class, 'show']);
+Route::post('/exploradores/{id}/inventario', [ItemController::class, 'store']);
+Route::post('/exploradores/trocar', [ItemController::class, 'trade']);
