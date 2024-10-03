@@ -2,27 +2,17 @@
 
 namespace App\Models;
 
+use Faker\Guesser\Name;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Explorer extends Model
+class locationHistory extends Model
 {
     use HasFactory;
-    public function items()
-    {
-        return $this->hasMany(Item::class);
-    }
-
     protected $fillable = [
         'name',
         'age',
         'latitude',
         'longitude'
-
     ];
-
-    public function locationHistories()
-    {
-        return $this->hasMany(locationHistory::class);
-    }
 }

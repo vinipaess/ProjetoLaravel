@@ -21,3 +21,4 @@ Route::patch('/exploradores/{id}', [ExplorerController::class, 'updateLocation']
 Route::get('/exploradores/{id}', [ExplorerController::class, 'show']);
 Route::post('/exploradores/{id}/inventario', [ItemController::class, 'store']);
 Route::post('/exploradores/trocar', [ItemController::class, 'trade']);
+Route::get('/exploradores/{id}/historico', [ExplorerController::class, 'getLocationHistory']);
